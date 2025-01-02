@@ -7,21 +7,28 @@ function App() {
   const [todos, setTodos] = useState([
     'Go to the gym',
     'Do homework',
-    'Sleep 8 hours a day'
+    'Sleep 7 hours a day'
   ])
+
+  const [todoValue, setTodoValue] = useState('')
 
   function hadleAddTodos(newTodo){
     const newTodoList = [...todos,newTodo]
     setTodos(newTodoList)
   }
 
-  function handleDeleteTodo(index) {}
+  function handleDeleteTodo(index) {
+    const newTodoList = todos.filter((todo, todoIndex) => {
+      return todoIndex !== index 
+    })
+    setTodos(newTodoList)
+  }
   function handleEditTodo(index) {}
 
   return (
     <>
-      <TodoInput hadleAddTodos={hadleAddTodos}/>
-      <TodoList todos={todos}/>
+      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} hadleAddTodos={hadleAddTodos}/>
+      <TodoList handleDeleteTodo={handleDeleteTodo} todos={todos}/>
     </>
   )
 }

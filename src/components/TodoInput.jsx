@@ -1,9 +1,7 @@
 import { useState } from "react"
 
 export default function TodoInput(props) {
-    const {hadleAddTodos} = props
-
-    const [todoValue, setTodoValue] = useState('')
+    const {todoValue, setTodoValue, hadleAddTodos} = props
 
     return (
         <header>
@@ -13,7 +11,9 @@ export default function TodoInput(props) {
             <button onClick={() => {
                 hadleAddTodos(todoValue)
                 setTodoValue('')
-            }}>Add</button>
+            }}>
+                Add
+            </button>
         </header>
     )
 }
