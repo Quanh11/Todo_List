@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function TodoInput(props) {
-    const {todoValue, setTodoValue, hadleAddTodos} = props
+    const {todoValue, setTodoValue, handleAddTodos} = props
 
     return (
         <header>
@@ -9,7 +9,7 @@ export default function TodoInput(props) {
                 setTodoValue(event.target.value);
             }} placeholder="Enter todo..."/>
             <button onClick={() => {
-                hadleAddTodos(todoValue)
+                handleAddTodos(todoValue)
                 setTodoValue('')
             }}>
                 Add
